@@ -2,10 +2,7 @@
   "name": "@uto-usui/vue-icons",
   "version": "0.0.14",
   "description": "Juuust Vue Icon, Automation workflow with Figma",
-  "files": [
-    "dist",
-    "es"
-  ],
+  "main": "index.js",
   "repository": "https://github.com/leadream/juuust-vue-icon.git",
   "scripts": {
     "generate": "sudo rm -rf src/icons && node bin/build.js",
@@ -35,25 +32,6 @@
     "uppercamelcase": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
   "config": {
     "framework": "vue",
     "style": "fill"
