@@ -34,9 +34,9 @@ jobs:
           git config --global user.email "push@no-reply.github.com"
           git config --global user.name "GitHub Push Action"
           yarn version --patch
+          git checkout master
           git add .
           git commit -m "GitHub Push" -a
-          git pull
           git push origin master
         fi
       env:
