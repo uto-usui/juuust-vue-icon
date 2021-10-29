@@ -28,15 +28,15 @@ jobs:
     - name: commit if changed
       run: |
         if [ -z "$(git status --porcelain)" ]; then
-        echo "Clean!"
-        exit 1
+          echo "Clean!"
+          exit 1
         else
-        git config --global user.email "push@no-reply.github.com"
-        git config --global user.name "GitHub Push Action"
-        yarn version --patch
-        git add --all
-        git commit -m "GitHub Push"
-        git push origin master
+          git config --global user.email "push@no-reply.github.com"
+          git config --global user.name "GitHub Push Action"
+          yarn version --patch
+          git add --all
+          git commit -m "GitHub Push"
+          git push origin master
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
