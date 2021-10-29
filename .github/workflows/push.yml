@@ -25,7 +25,8 @@ jobs:
         FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
         FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
     - run: yarn generate
-    - run: |
+    - name: commit if changed
+      run: |
         if [ -z "$(git status --porcelain)" ]; then
         echo "Clean!"
         exit 1
@@ -37,6 +38,8 @@ jobs:
         git commit -m "GitHub Push"
         git push origin master
         fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
     - run: yarn publish
       env:
