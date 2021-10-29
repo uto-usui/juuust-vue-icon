@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable prefer-template */
 const path = require('path')
 const fs = require('fs')
@@ -49,6 +48,7 @@ const generateIconCode = async ({name}) => {
   const component = getElementCode(ComponentName, attrsToString(getAttrs(names.style), names.style), svgCode)
 
   fs.writeFileSync(destination, component, 'utf-8');
+  fs.writeFileSync(`dist/svg/${names.name}.svg`, svgCode, 'utf-8');
 
   console.log('Successfully built', ComponentName);
   return {ComponentName, name: names.name}
