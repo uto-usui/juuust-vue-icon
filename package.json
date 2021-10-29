@@ -2,7 +2,7 @@
   "name": "@uto-usui/vue-icons",
   "version": "0.0.15",
   "description": "Juuust Vue Icon, Automation workflow with Figma",
-  "main": "bundle/index.common.js",
+  "main": "index.js",
   "files": [
     "dist",
     "es"
