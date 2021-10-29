@@ -35,8 +35,8 @@ jobs:
           git config --global user.name "GitHub Push Action"
           yarn version --patch
           git add .
-          git commit -m "GitHub Push"
-          git status
+          git commit -m "GitHub Push" -a
+          git pull
           git push origin master
         fi
       env:
