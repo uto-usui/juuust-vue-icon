@@ -1,6 +1,6 @@
 {
   "name": "@uto-usui/vue-icons",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Juuust Vue Icon, Automation workflow with Figma",
   "main": "index.js",
   "files": [
