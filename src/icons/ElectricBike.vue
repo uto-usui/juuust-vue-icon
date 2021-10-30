@@ -8,7 +8,7 @@
   </template>
   <script>
     export default {
-      name: "IconElectricBike24px1",
+      name: "IconElectricBike",
       props: {
         size: {
           type: Number,
