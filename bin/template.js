@@ -19,30 +19,29 @@ const getAttrs = (style) => {
   }
   return Object.assign({}, baseAttrs, style==='fill' ? fillAttrs : strokeAttrs)
 }
-  
-const getElementCode = (ComponentName, attrs, svgCode) => `
-  <template>
-    <svg
-      ${attrs}
-    >
-      ${svgCode}
-    </svg>
-  </template>
-  <script>
-    export default {
-      name: "Icon${ComponentName}",
-      props: {
-        size: {
-          type: Number,
-          default: 16
-        },
-        color: {
-          type: String,
-          default: "currentColor"
-        }
+
+const getElementCode = (ComponentName, attrs, svgCode) => `<template>
+  <svg
+    ${attrs}
+  >
+    ${svgCode}
+  </svg>
+</template>
+<script>
+  export default {
+    name: "Icon${ComponentName}",
+    props: {
+      size: {
+        type: Number,
+        default: 16
+      },
+      color: {
+        type: String,
+        default: "currentColor"
       }
-    };
-  </script>
+    }
+  };
+</script>
 `
 
 module.exports = { getAttrs, getElementCode }
