@@ -41,22 +41,22 @@ const attrsToString = (attrs, style) => {
 const generateIconCode = async ({name}) => {
   const names = parseName(name, defaultStyle)
   const location = path.join(rootDir, 'src/svg', `${names.name}.svg`)
-  const destination = path.join(rootDir, 'src/icons', `${names.name}.vue`)
+  const destination = path.join(rootDir, 'src/vue', `${names.name}.vue`)
   const code = fs.readFileSync(location)
   const svgCode = await processSvg(code)
   const ComponentName = names.componentName
   const component = getElementCode(ComponentName, attrsToString(getAttrs(names.style), names.style), svgCode)
 
   fs.writeFileSync(destination, component, 'utf-8');
-  fs.writeFileSync(`dist/svg/${names.name}.svg`, svgCode, 'utf-8');
 
-  console.log('Successfully built', ComponentName);
+  console.log('Successfully built', names);
   return {ComponentName, name: names.name}
 }
 
 // append export code to index.js
 const appendToIndex = ({ComponentName, name}) => {
-  const exportString = `export { default as Icon${ComponentName} } from './icons/${name}.vue';\r\n`;
+  const exportString = `export { default as Icon${ComponentName} } from './vue/${name}.vue';\r\n`;
+  console.log(exportString)
   fs.appendFileSync(
     path.join(rootDir, 'src', 'index.js'),
     exportString,
