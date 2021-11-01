@@ -1,4 +1,5 @@
-bin
+.gitignore
+.npmignore
 public
-.babelrc
-yarn-error.log
+.github
+bin
