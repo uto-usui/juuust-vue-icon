@@ -20,7 +20,6 @@ function optimize(svg) {
   const svgo = new Svgo({
     plugins: [
       { convertShapeToPath: false },
-      { convertColors: {currentColor: true} },
       { mergePaths: false },
       { removeAttrs: { attrs: '(fill|stroke.*)' } },
       { removeTitle: true },
