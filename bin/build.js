@@ -11,7 +11,7 @@ const rootDir = path.join(__dirname, '..')
 
 // where icons code in
 const srcDir = path.join(rootDir, 'src')
-const iconsDir = path.join(rootDir, 'src/icons')
+const iconsDir = path.join(rootDir, 'src/vue')
 
 // generate index and d.ts file
 const generateIndex = () => {
