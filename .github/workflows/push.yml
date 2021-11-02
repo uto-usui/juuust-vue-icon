@@ -40,7 +40,6 @@ jobs:
             git config --global user.name "GitHub Push Action"
             yarn version --patch
             git checkout master
-            git pull origin master  
             git add .
             git commit -m "GitHub Push" -a
             git push origin master
