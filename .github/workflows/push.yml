@@ -42,6 +42,7 @@ jobs:
             git checkout master
             git add .
             git commit -m "GitHub Push" -a
+            git checkout --ours
             git push origin master
           fi
         env:
