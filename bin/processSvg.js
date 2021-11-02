@@ -20,6 +20,7 @@ function optimize(svg) {
   const svgo = new Svgo({
     plugins: [
       { convertShapeToPath: false },
+      { convertColors: {currentColor: true} },
       { mergePaths: false },
       { removeAttrs: { attrs: '(fill|stroke.*)' } },
       { removeTitle: true },
@@ -48,8 +49,6 @@ function removeSVGElement(svg) {
  */
 async function processSvg(svg) {
   const optimized = await optimize(svg)
-    // remove semicolon inserted by prettier
-    // because prettier thinks it's formatting JSX not HTML
     .then(svg => svg.replace(/;/g, ''))
     .then(removeSVGElement)
     .then(svg =>
