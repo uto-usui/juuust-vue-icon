@@ -1,9 +1,9 @@
 {
   "name": "@uto-usui/vue-icons",
   "version": "0.0.30",
-  "description": "Juuust Vue Icon, Automation workflow with Figma",
+  "description": "",
   "main": "src/index.js",
-  "repository": "https://github.com/leadream/juuust-vue-icon.git",
+  "repository": "https://github.com/uto-usui/juuust-vue-icon",
   "scripts": {
     "generate": "sudo rm -rf src/icons && node bin/build.js",
     "currentColor": "sudo sed -i 's/ fill=\"black\"/ fill=\"currentColor\"/g' ./src/svg/*.svg"
